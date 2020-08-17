@@ -20,6 +20,13 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('welcome_message');
+		$this->load->view('daftar-hero');
+	}
+
+	public function form()
+	{
+		$data['role'] = $this->db->query("SELECT * FROM table_role_hero_ml");
+		$data['spec'] = $this->db->query("SELECT * FROM table_specially_hero_ml");
+		$this->load->view('input-hero',$data);
 	}
 }
