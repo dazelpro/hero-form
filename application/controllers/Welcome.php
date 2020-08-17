@@ -29,4 +29,44 @@ class Welcome extends CI_Controller {
 		$data['spec'] = $this->db->query("SELECT * FROM table_specially_hero_ml");
 		$this->load->view('input-hero',$data);
 	}
+
+	public function insert()
+	{
+		$name  		= $this->input->post('name');
+		$avatar  	= $this->input->post('avatar');
+		$durability = $this->input->post('durability');
+		$offence  	= $this->input->post('offence');
+		$ability  	= $this->input->post('ability');
+		$dificulty  = $this->input->post('dificulty');
+
+		$xrole[]=$this->input->post('role');
+		foreach($xrole as $role){
+			$roles = @implode(",", $role);
+		}
+
+		$xspec[]=$this->input->post('spec');
+		foreach($xspec as $spec){
+			$specs = @implode(",", $spec);
+		}
+
+		$this->db->query("INSERT INTO table_hero_ml (
+					hero_name,
+					hero_avatar,
+					hero_durability,
+					hero_offence,
+					hero_ability,
+					hero_difficulty,
+					hero_role,
+					hero_specially) 
+				VALUES (
+					'$name',
+					'$avatar',
+					'$durability',
+					'$offence',
+					'$ability',
+					'$dificulty',
+					'$roles',
+					'$specs')");
+		redirect('');
+	}
 }
