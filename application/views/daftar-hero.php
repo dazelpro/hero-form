@@ -17,14 +17,6 @@
 		<div class="w3-container">
 			<h2>Daftar Hero Mobile Legends</h2>
 			<hr>
-			<!-- <div class="w3-row">
-				<div class="w3-container w3-twothird">
-					<h2>w3-twothird</h2>
-				</div>
-				<div class="w3-container w3-third">
-					<h2>w3-third</h2>
-				</div>
-			</div>  -->
 			<table class="w3-table-all">
 				<thead>
 					<tr class="w3-teal">
@@ -47,7 +39,7 @@
 					<td><?php echo $data->hero_role;?></td>
 					<td><?php echo $data->hero_avatar;?></td>
 					<td>
-						<a href="" class="w3-button w3-tiny w3-border">Edit</a>
+						<a href="<?php echo site_url('/edit/'); ?><?php echo $data->hero_id;?>" class="w3-button w3-tiny w3-border">Edit</a>
 					</td>
 				</tr>
 				<?php endforeach;?>

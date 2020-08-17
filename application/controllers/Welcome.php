@@ -30,6 +30,14 @@ class Welcome extends CI_Controller {
 		$this->load->view('input-hero',$data);
 	}
 
+	public function formedit($id)
+	{
+		$data['hero'] = $this->db->query("SELECT * FROM table_hero_ml WHERE hero_id = '$id'");
+		$data['role'] = $this->db->query("SELECT * FROM table_role_hero_ml");
+		$data['spec'] = $this->db->query("SELECT * FROM table_specially_hero_ml");
+		$this->load->view('edit-hero',$data);
+	}
+
 	public function insert()
 	{
 		$name  		= $this->input->post('name');

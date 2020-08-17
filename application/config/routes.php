@@ -51,5 +51,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $route['default_controller'] = 'welcome';
 $route['form-input'] = 'welcome/form';
+$route['edit/(:any)'] = 'welcome/formedit/$1';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

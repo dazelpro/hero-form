@@ -4,18 +4,18 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-	<title>Input Hero Mobile Legends</title>
+	<title>Edit Hero Mobile Legends</title>
 </head>
 <body>
 	<div class="w3-sidebar w3-teal w3-bar-block" style="width:15%">
 		<h3 class="w3-bar-item">RestAPI</h3>
 		<a href="<?php echo site_url('/'); ?>" class="w3-bar-item w3-button">Daftar Hero</a>
-		<a href="<?php echo site_url('/form-input'); ?>" class="w3-bar-item w3-button w3-active">Input Hero</a>
+		<a href="<?php echo site_url('/form-input'); ?>" class="w3-bar-item w3-button">Input Hero</a>
 	</div>
 
 	<div style="margin-left:15%">
 		<div class="w3-container">
-			<h2>Input Hero Mobile Legends</h2>
+			<h2>Edit Hero Mobile Legends</h2>
 			<hr>
 			<form action="<?php echo site_url('/welcome/insert'); ?>" method="POST">
 				<div class="w3-row">
