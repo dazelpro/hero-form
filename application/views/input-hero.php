@@ -38,7 +38,7 @@
 					</div>
 					<div class="w3-container w3-third">
 						<label><b>Hero Role</b></label>
-						<div style="overflow-y:scroll;height:150px;margin-bottom:30px;">
+						<div style="overflow-y:scroll;height:200px;margin-bottom:30px;">
 							<?php foreach ($role->result() as $row) : ?>
 								<p>
 									<input class="w3-check" type="checkbox" name="role[]" id="<?php echo $row->role_name;?>" value="<?php echo $row->role_name;?>">
@@ -48,7 +48,7 @@
 						</div>
 						<hr>
 						<label><b>Hero Specially</b></label>
-						<div style="overflow-y:scroll;height:150px;margin-bottom:30px;">
+						<div style="overflow-y:scroll;height:200px;margin-bottom:30px;">
 							<?php foreach ($spec->result() as $row) : ?>
 								<p>
 									<input class="w3-check" type="checkbox" name="spec[]" id="<?php echo $row->specially_name;?>" value="<?php echo $row->specially_name;?>">
