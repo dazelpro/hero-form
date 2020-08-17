@@ -17,6 +17,7 @@
 		<div class="w3-container">
 			<h2>Input Hero Mobile Legends</h2>
 			<hr>
+			<?php echo $this->session->flashdata('msg');?>
 			<form action="<?php echo site_url('/welcome/insert'); ?>" method="POST">
 				<div class="w3-row">
 					<div class="w3-container w3-twothird">

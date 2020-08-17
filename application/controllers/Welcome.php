@@ -57,6 +57,16 @@ class Welcome extends CI_Controller {
 			$specs = @implode(",", $spec);
 		}
 
+		$cek       = $this->db->query("SELECT * FROM table_hero_ml WHERE hero_name='$name'");
+		if($cek->num_rows() > 0){
+			echo $this->session->set_flashdata('msg','<div class="w3-panel w3-red w3-display-container">
+				<span onclick="this.parentElement.style.display=`none`"
+				class="w3-button w3-red w3-large w3-display-topright">x</span>
+				<p><b>GAGAL MENYIMPAN DATA!</b> Hero sudah ada di Database.</p>
+			</div>');
+			redirect('form-input');
+		}
+
 		$this->db->query("INSERT INTO table_hero_ml (
 					hero_name,
 					hero_avatar,
