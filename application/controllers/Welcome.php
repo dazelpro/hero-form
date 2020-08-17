@@ -77,4 +77,37 @@ class Welcome extends CI_Controller {
 					'$specs')");
 		redirect('');
 	}
+
+	public function edit()
+	{
+		$id   		= $this->input->post('id');
+		$name  		= $this->input->post('name');
+		$avatar  	= $this->input->post('avatar');
+		$durability = $this->input->post('durability');
+		$offence  	= $this->input->post('offence');
+		$ability  	= $this->input->post('ability');
+		$dificulty  = $this->input->post('dificulty');
+
+		$xrole[]=$this->input->post('role');
+		foreach($xrole as $role){
+			$roles = @implode(",", $role);
+		}
+
+		$xspec[]=$this->input->post('spec');
+		foreach($xspec as $spec){
+			$specs = @implode(",", $spec);
+		}
+
+		$this->db->query("UPDATE table_hero_ml SET 
+					hero_name = '$name',
+					hero_avatar = '$avatar',
+					hero_durability = '$durability',
+					hero_offence = '$offence',
+					hero_ability = '$ability',
+					hero_difficulty = '$dificulty',
+					hero_role = '$roles',
+					hero_specially = '$specs'
+		WHERE hero_id='$id'");
+		redirect('');
+	}
 }
